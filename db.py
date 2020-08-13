@@ -18,10 +18,10 @@ TABLES['player'] = (
     """ CREATE TABLE player (id INT PRIMARY KEY, name VARCHAR(50), position VARCHAR(50), dateOfBirth VARCHAR(25), countryOfBirth VARCHAR(25), nationality VARCHAR(25)) ENGINE=InnoDB; """
 )
 TABLES['teamXcompetition'] = (
-    """ CREATE TABLE teamXcompetition (id_competition INT, id_team INT, PRIMARY KEY (id_competition, id_team), FOREIGN KEY (id_competition) REFERENCES competition(id), FOREIGN KEY (id_team) REFERENCES team(id)) ENGINE=InnoDB; """
+    """ CREATE TABLE teamXcompetition (id_competition INT, id_team INT, FOREIGN KEY (id_competition) REFERENCES competition(id), FOREIGN KEY (id_team) REFERENCES team(id)) ENGINE=InnoDB; """
 )
 TABLES['teamXplayer'] = (
-    """ CREATE TABLE teamXplayer (id_team INT, id_player INT, PRIMARY KEY (id_team, id_player), FOREIGN KEY (id_team) REFERENCES team(id), FOREIGN KEY (id_player) REFERENCES player(id)) ENGINE=InnoDB; """
+    """ CREATE TABLE teamXplayer (id_team INT, id_player INT, FOREIGN KEY (id_team) REFERENCES team(id), FOREIGN KEY (id_player) REFERENCES player(id)) ENGINE=InnoDB; """
 )
 
 
@@ -152,7 +152,7 @@ def import_league(code_league):
         )
         data_competition = (id_competition, code_competition, name_competition, areaName_competition)
         
-        print('Cargando datos...')
+        print('Cargando datos... Esto puede llevar unos minutos')
         #Insercion
         cursor.execute(new_competition, data_competition)
         conn.commit()
