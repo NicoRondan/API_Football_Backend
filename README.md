@@ -17,7 +17,7 @@ python app.py
 
 ## Ejemplos de pruebas ⚙️
 
-_ Importe de liga:
+Importe de liga:
 * http://localhost:3000/import-league/pl
 * http://localhost:3000/import-league/ded
 * http://localhost:3000/import-league/sa
@@ -26,7 +26,7 @@ Total de jugadores por liga:
 * http://localhost:3000/total-players/pl
 * http://localhost:3000/total-players/ded
 * http://localhost:3000/total-players/sa
-_
+
 
 ## Docs 📖
 * Flask: https://flask.palletsprojects.com/en/1.1.x/
